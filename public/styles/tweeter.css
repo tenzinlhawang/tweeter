@@ -1,0 +1,41 @@
+.tweet{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border:solid #696969;
+  border-width: thick;
+  padding: 20px;
+  margin-bottom: 2em;
+}
+.tweet:hover{
+box-shadow:5px 6px #6495ED ;
+}
+.tweet header{
+  display: flex;
+  align-items:center;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #696969;
+}
+.tweet footer{
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: small;
+  color: #696969;
+}
+.tweet-png{
+  height: 100px;
+  width: 100px;
+}
+.tweet p{
+  border-bottom: solid #696969;;
+  border-width: thick;
+  padding: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color:#696969;
+}
+.fas{
+  color: #4056A1;
+  font-size: small;
+ padding:0.5em
+}
