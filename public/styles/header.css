@@ -1,6 +1,7 @@
 header {
   height: 400%;
   width: 100%;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
