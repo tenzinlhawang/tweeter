@@ -8,7 +8,7 @@
 
 const createTweetElement = function(tweetDb) {
   const $newTweet = 
-    $(`<article>
+    $(`<article class='tweet'>
     <header>
     <img src="${tweetDb.user.avatars}"/>
       <span>
@@ -33,7 +33,7 @@ const createTweetElement = function(tweetDb) {
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
     const eachTweet = createTweetElement(tweet);
-    $('#tweets-container').append(eachTweet)
+    $('#tweets-container').prepend(eachTweet)
     
   }
   // loops through tweets
@@ -58,8 +58,11 @@ $("form").on("submit", function(event) {
     })
     .catch(err => console.log(err))
     .always(() => console.log("Finished sending, did it work, i dunno"))
+    $("#tweets-container").empty();
+    loadTweets();
   }
   })
+  
 
 const loadTweets = function () {
   $.ajax({
@@ -71,6 +74,6 @@ const loadTweets = function () {
     console.log("Finished loading, did it work, i dunno");
   })
 }
-loadTweets();
+//loadTweets();
 })
 
