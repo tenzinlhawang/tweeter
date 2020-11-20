@@ -3,7 +3,7 @@ nav {
   justify-content: space-between;
   position: fixed;
   top: 0;
-  height: 80px;
+  height: 100px;
   width: 100%;
   background-color: #4056A1;
   color: #ffffff;
@@ -11,3 +11,16 @@ nav {
   padding: 1.5em; 
 }
 
+.arrow {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width:1024px){
+  nav{
+    background-color:  #cc8800;
+  }
+}

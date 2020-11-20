@@ -6,6 +6,7 @@
 }
 .new-tweet label{
   font-family: 'Source Sans Pro', sans-serif;
+  
 }
 .new-tweet button{
   font-family: 'Bungee', cursive;
@@ -34,4 +35,9 @@ textarea{
   width: 100%;
   margin-bottom: 3em;
   resize: none;
+}
+@media only screen and (min-width: 1024px) {
+.container h2{
+  margin-top: 300px;
+}
 }

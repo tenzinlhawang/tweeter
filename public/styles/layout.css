@@ -15,18 +15,33 @@ html {
  */
 
 body {
+  
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 100px;
 }
 
 main {
   display: flex;
   width: 90%;
   align-items: center;
+  margin: auto;
+
   /* background-color: inherit; */
 }
+
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+}
+
+  
 
 
 /*

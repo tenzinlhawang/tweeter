@@ -6,6 +6,13 @@
 
  $(document).ready(function() {
 
+  $(".error-message").hide();
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
 const createTweetElement = function(tweetDb) {
   const $newTweet = 
     $(`<article class='tweet'>
@@ -15,7 +22,7 @@ const createTweetElement = function(tweetDb) {
          ${tweetDb.user.name}
       </span>
     </header>
-    <p>${tweetDb.content.text}</p>
+    <p>${escape(tweetDb.content.text)}</p>
     <footer>
     <span><strong>${tweetDb.created_at}</strong></span>
     <div>
@@ -41,25 +48,41 @@ const renderTweets = function(tweets) {
   // takes return value and appends it to the tweets container
 }
 
+$(".button-tweet").on('click', function(event) {
+  $(".compose-tweet").focus();
+  $(".compose-tweet").toggle();
+
+})
 
 $("form").on("submit", function(event) {
   event.preventDefault();
   console.log('Ajax request working well...')
   const tweet = $('form textarea').val();
   if(tweet === "" || tweet === null){
-    return alert("Your tweet is empty");
+    $('.error-message').slideDown();
+    $('.error-message strong').text("Tweet is empty !")
+    setTimeout(() => {
+      $('.error-message').slideUp(); 
+    }, 2000);
   } else if(tweet.length > 140){
-    return alert("Your tweet exceeds the maximum characters!");
+     $('.error-message').slideDown()
+     $('.error-message strong').text("Your tweet exceeds the maximum characters!");
+     setTimeout(() => {
+      $('.error-message').slideUp(); 
+     }, 2000);
   } else {
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: $("form").serialize() 
     })
-    .catch(err => console.log(err))
-    .always(() => console.log("Finished sending, did it work, i dunno"))
-    $("#tweets-container").empty();
-    loadTweets();
+    .then(() => {
+      $("#tweets-container").empty();
+      $("#tweet-text").val('');
+      loadTweets();
+    })
+    $(".error-message").hide();
+      $(".error-message").slideUp();
   }
   })
   

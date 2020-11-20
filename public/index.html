@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -33,14 +34,15 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <div>
-        <span>tweeter</span>
+        <span class="nav-bar">tweeter</span>
       </div>
-      <div>
-        <span><b>Write</b> a new tweet</span>
+      <div class="arrow">
+        <span><strong>Write</strong> a new tweet</span>
+        <button class="button-tweet" type="button"><img src="/images/arrows-down.png"></button>
       </div>
     </nav>
 
-    <header>
+    <header class="profile">
       <div>
           <img src="/images/profile-hex.png"/> 
       </div>
@@ -52,7 +54,11 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <div class="error-message">
+          <img src="/images/warning.png">
+          <span><strong></strong></span>
+        </div>
+        <h2></h2>
         <form class="compose-tweet" method="POST" action="/tweets">
           <div class="TweetText">
           <label for="tweet-text">What are you humming about?</label>
