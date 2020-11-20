@@ -41,10 +41,12 @@ const createTweetElement = function(tweetDb) {
 
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
+    
     const eachTweet = createTweetElement(tweet);
     $('#tweets-container').prepend(eachTweet)
-    
+
   }
+    $(".counter").val(140);
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
