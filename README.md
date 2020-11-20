@@ -6,10 +6,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-![1](https://github.com/tenzinlhawang/tweeter/blob/master/docs/1.png)
-![2](https://github.com/tenzinlhawang/tweeter/blob/master/docs/2.png)
-![3](https://github.com/tenzinlhawang/tweeter/blob/master/docs/3.png)
-![4](https://github.com/tenzinlhawang/tweeter/blob/master/docs/4.png)
+![1](https://github.com/tenzinlhawang/tweeter/blob/master/docs/desktop-view.png)
+![2](https://github.com/tenzinlhawang/tweeter/blob/master/docs/desktop-view2.png)
+![3](https://github.com/tenzinlhawang/tweeter/blob/master/docs/mobile-view.png)
+
 
 
 ## Getting Started
