@@ -14,6 +14,8 @@
   }
 
 const createTweetElement = function(tweetDb) {
+  const unixTimestamp = Date(tweetDb.created_at);
+   const milliseconds = unixTimestamp.toString();
   const $newTweet = 
     $(`<article class='tweet'>
     <header>
@@ -24,7 +26,7 @@ const createTweetElement = function(tweetDb) {
     </header>
     <p>${escape(tweetDb.content.text)}</p>
     <footer>
-    <span><strong>${tweetDb.created_at}</strong></span>
+    <span><strong>${milliseconds}</strong></span>
     <div>
       <i class="fas fa-flag"></i>
       <i class="fas fa-sync"></i>
